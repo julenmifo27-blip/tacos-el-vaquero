@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource/saira-stencil-one/400.css";
+@import "@fontsource/yellowtail/400.css";
+
+@theme {
+  /* Rojo tomado de la referencia (taco sobre fondo rojo): bermellón, no rojo Coca-Cola */
+  --color-chile: #f23a0c;
+  --color-chile-oscuro: #c22d08;
+  /* Amarillo del plato y los manteles */
+  --color-maiz: #f5c11e;
+  --color-carbon: #141414;
+  --color-hueso: #ededea;
+  /* El componente de 21st.dev usa bg-muted mientras cargan las fotos */
+  --color-muted: #c22d08;
+
+  --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-stencil: "Saira Stencil One", "Archivo Variable", sans-serif;
+  --font-script: "Yellowtail", cursive;
+}
+
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-chile font-sans text-carbon antialiased;
+}
+
+/* Archivo expandida y negrísima, como los títulos de las guías de tacos */
+.ancha {
+  font-stretch: 125%;
+  font-weight: 900;
+}
+
+/*
+ * El componente de 21st.dev intenta pausar el carrusel con movimiento reducido,
+ * pero su `animation` en línea gana sobre esa regla. Aquí se fuerza la pausa.
+ */
+@media (prefers-reduced-motion: reduce) {
+  [class*="tgh-t-"] {
+    animation-play-state: paused !important;
+  }
+}
+
+::selection {
+  background: var(--color-maiz);
+  color: var(--color-carbon);
+}

@@ -1,0 +1,9 @@
+node_modules
+dist
+# Originales a resolución completa: se quedan solo en la compu
+fotos-originales
+*.local
+# Capturas de revisión
+capturas-*.png
+# Configuración local de Claude Code
+.claude
